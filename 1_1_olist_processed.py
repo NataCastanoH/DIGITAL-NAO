@@ -245,19 +245,19 @@ orders.info()
 # Convierte a formato fecha completando los campos apropiados
 
 ## convierte order_purchase_timestamp
-orders['order_purchase_timestamp'] = pd.to_datetime(... , errors='coerce' )
+orders['order_purchase_timestamp'] = pd.to_datetime(orders['order_purchase_timestamp'] , errors='coerce' )
 
 # order_approved_at
-orders['order_approved_at'] = pd.to_datetime(... , errors='coerce' )
+orders['order_approved_at'] = pd.to_datetime(orders['order_approved_at'] , errors='coerce' )
 
 # order_delivered_carrier_date
-orders['order_delivered_carrier_date'] = pd.to_datetime(... , errors='coerce' )
+orders['order_delivered_carrier_date'] = pd.to_datetime(orders['order_delivered_carrier_date'] , errors='coerce' )
 
 # order_delivered_customer_date
-orders['order_delivered_customer_date'] = pd.to_datetime(... , errors='coerce' )
+orders['order_delivered_customer_date'] = pd.to_datetime(orders['order_delivered_customer_date'] , errors='coerce' )
 
 # order_estimated_delivery_date
-orders['order_estimated_delivery_date'] = pd.to_datetime(... , errors='coerce' )
+orders['order_estimated_delivery_date'] = pd.to_datetime(orders['order_estimated_delivery_date'] , errors='coerce' )
 
 # %% [markdown]
 # Ahora podemos ver como ha cambiado el formato:
@@ -498,7 +498,7 @@ results = orders_totals.merge(
 # Completa el codigo
 results.to_csv(
     # nombre del archivo
-    'olist_processed.cvs', 
+    'olist_processed.csv', 
     # flag para no escribir el indice del dataframe al csv
     index=False
     )
@@ -536,7 +536,7 @@ results.to_csv(
 # %%
 #Nombre del archivo con su respectiva extensión
 FILE_PROCESSED = 'olist_processed.cvs'
-processed = pd.read_csv('olist_processed.cvs')
+processed = pd.read_csv('olist_processed.csv')
 
 # %%
 #Confirmamos que 
@@ -554,7 +554,7 @@ columnas_a_eliminar=['order_id', 'customer_id', 'order_status',
                      'geolocation_zip_code_prefix' , 'geolocation_lat',
                      'geolocation_lng', 'geolocation_city', 'geolocation_state',
                      'abbreviation', 'state_name', 'year', 'month', 'quarter', 
-                     'year_month', 'delay_status','delta_days']
+                     'year_month', 'delay_status']
 Tabla_Pearson = processed.drop(columnas_a_eliminar, axis=1)
 
 # %%
@@ -577,9 +577,7 @@ Tabla_Pearson.corr()
 # %%
 plt.matshow(Tabla_Pearson.corr())
 
-# %%
-plt.plot(Tabla_Pearson["total_sales"],Tabla_Pearson["total_products"], "ro")
-plt.xlabel("Total productos")
-plt.ylabel("Ventas totales")
+# %% [markdown]
+# En este caso no se puede evidenciar ninguna correlación entre las variables, por lo que se requiere hacer un análisis más concreto o especializado sobre las órdenes que estàn afectando la reputación de la empresa Olist, y se están entregando con retraso.
 
 
