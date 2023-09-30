@@ -1,0 +1,28 @@
+﻿state_name,abbreviation,region
+Rondônia,RO,north
+Acre,AC,north
+Amazonas,AM,north
+Roraima,RR,north
+Pará,PA,north
+Amapá,AP,north
+Tocantins,TO,north
+Maranhão,MA,northeast
+Piauí,PI,northeast
+Ceará,CE,northeast
+Rio Grande do Norte,RN,northeast
+Paraíba,PB,northeast
+Pernambuco,PE,northeast
+Alagoas,AL,northeast
+Sergipe,SE,northeast
+Bahia,BA,northeast
+Minas Gerais,MG,northwest
+Espírito Santo,ES,northwest
+Rio de Janeiro,RJ,northwest
+São Paulo,SP,northwest
+Paraná,PR,south
+Santa Catarina,SC,south
+Rio Grande do Sul,RS,south
+Mato Grosso do Sul,MS,south
+Mato Grosso,MT,center-west
+Goiás,GO,center-west
+Distrito Federal,DF,center-west
